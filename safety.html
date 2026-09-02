@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ff416c">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <title>Women Safety Alert</title>
+</head>
+<body>
+<div class="container">
+    <h2>Women Safety Emergency</h2>
+    <input type="text" id="name" placeholder="Enter Your Name" autocomplete="name">
+    <input type="tel" id="contact" placeholder="Emergency Contact Number (with country code)" autocomplete="tel">
+    <button class="location" onclick="getLocation()">📍 Get My Location</button>
+    <button class="sos" onclick="generateMessage()">🚨 Generate SOS</button>
+    <button class="sms" onclick="sendSMS()">📩 Send SMS</button>
+    <button class="whatsapp" onclick="sendWhatsApp()">💬 Send WhatsApp</button>
+    <div id="status" class="status" role="status"></div>
+</div>
+<script src="script.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(console.error));
+}
+</script>
+</body>
+</html>
