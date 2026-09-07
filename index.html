@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#100d1d">
+<title>WomenSafe — Safety Alert</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar">
+  <div class="brand"><div class="brand-icon">✦</div><div><span class="eyebrow">PERSONAL SAFETY</span><h1>Women<span>Safe</span></h1></div></div>
+  <button class="icon-btn" onclick="location.href='safety.html'">?</button>
+</header>
+<main>
+<section class="hero"><div><p class="muted">Your safety dashboard</p><h2>Stay ready.<br><span>Stay connected.</span></h2></div><div class="status-pill"><i></i>SOS READY</div></section>
+
+<section class="profile-card glass">
+  <div class="avatar">◉</div><div class="profile-fields"><label for="name">YOUR NAME</label><input id="name" type="text" placeholder="Enter your name" autocomplete="name"></div>
+</section>
+
+<section class="sos-card">
+  <div class="sos-ring ring-one"></div><div class="sos-ring ring-two"></div>
+  <button id="sosButton" class="sos-button" aria-label="Hold to generate SOS"><span class="sos-icon">!</span><strong>SOS</strong><small>HOLD 3 SEC</small></button>
+  <p class="sos-caption">Hold to prepare your emergency alert</p>
+</section>
+
+<section class="location-card glass">
+  <div class="section-heading"><div class="heading-icon">⌖</div><div><span class="eyebrow">CURRENT LOCATION</span><h3 id="locationTitle">Location not shared</h3></div></div>
+  <button class="outline-btn" onclick="getLocation()">Get my location <span>→</span></button>
+  <a id="mapLink" class="map-link hidden" target="_blank" rel="noopener">Open location in Maps ↗</a>
+</section>
+
+<section class="contact-card glass">
+  <div class="section-heading"><div class="heading-icon contact-icon">♡</div><div><span class="eyebrow">EMERGENCY CONTACT</span><h3>Your trusted person</h3></div></div>
+  <input id="contact" class="full-input" type="tel" placeholder="Phone number with country code" autocomplete="tel">
+  <div class="action-grid">
+    <button class="action-btn sms" onclick="sendSMS()"><span>▣</span> SMS</button>
+    <button class="action-btn whatsapp" onclick="sendWhatsApp()"><span>◌</span> WhatsApp</button>
+    <a class="action-btn call" href="tel:112"><span>☎</span> Call 112</a>
+  </div>
+</section>
+
+<section class="message-card glass">
+  <div class="message-top"><div><span class="eyebrow">ALERT PREVIEW</span><h3>Emergency message</h3></div><span id="messageState" class="mini-state">NOT READY</span></div>
+  <p id="messagePreview">Generate an SOS to preview the message that will be sent.</p>
+</section>
+
+<div id="status" class="status-text" role="status"></div>
+<a class="safety-link" href="safety.html"><span>✦</span><div><strong>Safety Guide</strong><small>Quick tips for an emergency</small></div><b>→</b></a>
+</main>
+<nav class="bottom-nav"><a class="active" href="index.html"><span>⌂</span><small>Home</small></a><a href="#contact"><span>♡</span><small>Contact</small></a><a href="safety.html"><span>◈</span><small>Safety</small></a></nav>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
